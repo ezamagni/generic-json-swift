@@ -55,13 +55,13 @@ public extension JSON {
     /// If this is not an `.array` or the index is out of bounds, returns `nil`.
     subscript(index: Int) -> JSON? {
         get {
-            if case .array(let arr) = self, arr.indices.contains(index) {
+            if case .array(let arr) = self {
                 return arr[index]
             }
             return nil
         }
         set {
-            if case .array(var arr) = self, arr.indices.contains(index) {
+            if case .array(var arr) = self {
                 if let value = newValue {
                     arr[index] = value
                 } else {
@@ -128,5 +128,4 @@ public extension JSON {
 
         return tail.isEmpty ? value : value.queryKeyPath(tail)
     }
-
 }

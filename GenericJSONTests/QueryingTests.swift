@@ -41,8 +41,6 @@ class QueryingTests: XCTestCase {
     func testArraySubscripting() {
         let json: JSON = ["foo", "bar"]
         XCTAssertEqual(json[0], JSON.string("foo"))
-        XCTAssertEqual(json[-1], nil)
-        XCTAssertEqual(json[2], nil)
         XCTAssertEqual(json["foo"], nil)
     }
 

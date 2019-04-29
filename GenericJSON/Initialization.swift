@@ -35,7 +35,6 @@ extension JSON {
 }
 
 extension JSON {
-
     /// Create a JSON value from an `Encodable`. This will give you access to the “raw”
     /// encoded JSON value the `Encodable` is serialized into.
     public init<T: Encodable>(encodable: T) throws {
@@ -45,28 +44,24 @@ extension JSON {
 }
 
 extension JSON: ExpressibleByBooleanLiteral {
-
     public init(booleanLiteral value: Bool) {
         self = .bool(value)
     }
 }
 
 extension JSON: ExpressibleByNilLiteral {
-
     public init(nilLiteral: ()) {
         self = .null
     }
 }
 
 extension JSON: ExpressibleByArrayLiteral {
-
     public init(arrayLiteral elements: JSON...) {
         self = .array(elements)
     }
 }
 
 extension JSON: ExpressibleByDictionaryLiteral {
-
     public init(dictionaryLiteral elements: (String, JSON)...) {
         var object: [String:JSON] = [:]
         for (k, v) in elements {
@@ -77,21 +72,18 @@ extension JSON: ExpressibleByDictionaryLiteral {
 }
 
 extension JSON: ExpressibleByFloatLiteral {
-
     public init(floatLiteral value: Float) {
         self = .number(value)
     }
 }
 
 extension JSON: ExpressibleByIntegerLiteral {
-
     public init(integerLiteral value: Int) {
         self = .number(Float(value))
     }
 }
 
 extension JSON: ExpressibleByStringLiteral {
-
     public init(stringLiteral value: String) {
         self = .string(value)
     }
