@@ -52,7 +52,7 @@ public extension JSON {
 
     /// If this is an `.array`, returns or sets the item at index
     ///
-    /// If this is not an `.array` or the index is out of bounds, returns `nil`.
+    /// If this is not an `.array` returns `nil`.
     subscript(index: Int) -> JSON? {
         get {
             if case .array(let arr) = self {
